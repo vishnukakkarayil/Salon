@@ -2,6 +2,7 @@ import React from 'react';
 import { MDBCarouselItem, MDBCarouselCaption, MDBMask, MDBView } from 'mdbreact'
 
 const Banner = (bnrimage) => {
+<<<<<<< HEAD
     
     bnrimage.map((count) =>{
         return console.log(count) 
@@ -38,6 +39,24 @@ const Banner = (bnrimage) => {
             
        </>
     );
+=======
+    return (
+        <>
+            {
+                bnrimage.length > 0 ?
+                    bnrimage.map(image => (
+                        <h1>hello</h1>
+                    ))
+                    : null
+            }
+        </>
+    )
+    //     if(bnrimage){
+    //     bnrimage.map((count) =>{
+    //         return console.log(count) 
+    //     })
+    // }
+>>>>>>> 358fc149bc28b2712de3163b9be69b20b2d362e5
 }
 
 export default Banner;
