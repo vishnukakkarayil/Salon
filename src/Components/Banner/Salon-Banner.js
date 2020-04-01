@@ -1,14 +1,14 @@
 import React from 'react';
 import { MDBCarouselItem, MDBCarouselCaption, MDBMask, MDBView } from 'mdbreact'
 
-const Banner = (bnrimage) => {
+const Banner = ({ bnrimage }) => {
     console.log(bnrimage)
     return (
         <>
             {
-                bnrimage.bnrimage.length > 0 ?
-                    bnrimage.bnrimage.map(image => (
-                        <MDBCarouselItem itemId="1">
+                bnrimage.length > 0 ?
+                    bnrimage.map((image, index) => (
+                        <MDBCarouselItem itemId={index}>
                             <MDBView>
                                 <MDBMask overlay="black-light flex-center flex-column text-white text-center" />
                                 <img
