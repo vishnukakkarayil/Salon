@@ -1,8 +1,7 @@
 import React from 'react';
-import { MDBCarouselItem, MDBCarouselCaption, MDBMask, MDBView } from 'mdbreact'
+import { MDBCarouselItem, MDBCarouselCaption, MDBMask, MDBView, MDBContainer, MDBCol, MDBRow } from 'mdbreact'
 
-const Banner = ({ bnrimage }) => {
-    console.log(bnrimage)
+const Banner = ({ bnrimage, bnrStyle }) => {
     return (
         <>
             {
@@ -10,17 +9,31 @@ const Banner = ({ bnrimage }) => {
                     bnrimage.map((image, index) => (
                         <MDBCarouselItem itemId={index}>
                             <MDBView>
-                                <MDBMask overlay="black-light flex-center flex-column text-white text-center" />
+                                <MDBMask overlay="blue" />
                                 <img
-                                    className="d-block w-100"
+                                    className={bnrStyle}
                                     src={image}
-                                    alt="First slide"
-                                />
+                                    alt="Banner image"
+                                />                                
                                 <MDBMask />
                             </MDBView>
-                            <MDBCarouselCaption>
-                                <h3 className="h3-responsive">Light mask</h3>
-                                <p>First text</p>
+                            <MDBCarouselCaption className="banner-caption">
+                                <MDBContainer>
+                                    <MDBRow>
+                                        <MDBCol size="6" md="6">
+                                            <h1 className="h1-responsive font-weight-bold mt-sm-5">
+                                            Make purchases with our app
+                                            </h1>
+                                            {/* <hr className="hr-light" /> */}
+                                            <h6 className="mb-4">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            Rem repellendus quasi fuga nesciunt dolorum nulla magnam
+                                            veniam sapiente, fugiat! Commodi sequi non animi ea dolor
+                                            molestiae iste.
+                                            </h6>
+                                        </MDBCol>
+                                    </MDBRow>
+                                </MDBContainer>
                             </MDBCarouselCaption>
                         </MDBCarouselItem>
                     ))
@@ -30,4 +43,7 @@ const Banner = ({ bnrimage }) => {
     )
 }
 
+Banner.defaultProps = {
+    bnrStyle: "defaultBnrStyle"
+}
 export default Banner;
